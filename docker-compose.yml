@@ -5,6 +5,7 @@ networks:
 services:
   target_1:
     build:
+      context: .
       dockerfile: dockerfiles/target/Dockerfile
     container_name: target_001
     hostname: target_1
@@ -12,6 +13,7 @@ services:
       - cribl
   target_2:
     build:
+      context: .
       dockerfile: dockerfiles/target/Dockerfile
     container_name: target_002
     hostname: target_2

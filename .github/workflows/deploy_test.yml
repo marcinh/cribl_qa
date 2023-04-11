@@ -5,6 +5,7 @@ on: [ push ]
 jobs:
   build:
     name: Deploy app and perform tests
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: isbang/compose-action@v1.4.1

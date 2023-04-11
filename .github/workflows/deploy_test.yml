@@ -11,3 +11,12 @@ jobs:
       - uses: isbang/compose-action@v1.4.1
         with:
           compose-file: docker-compose.yml
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install project dependencies
+        run: pip install --no-cache-dir -r tests\requirements.txt
+      - name: Run tests
+        run: |
+          pytest tests

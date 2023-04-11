@@ -18,9 +18,12 @@ def test_file_contents():
         container = client.containers.get(target)
         cmd = f'cat {file_path}'
         _, stream = container.exec_run(cmd=cmd, stream=True)
+        whole = ''
         for data in stream:
-            events.append(data.decode())
+            whole += data.decode()
+        events.extend(whole.splitlines())
 
+    events.sort()
     assert len(expected_events) == len(events)
 
     expected_events = set(expected_events)

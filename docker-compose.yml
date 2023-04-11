@@ -37,11 +37,3 @@ services:
       - cribl
     depends_on:
       - splitter
-#  tests:
-#    build:
-#      context: .
-#      dockerfile: tests/Dockerfile
-#    networks:
-#      - cribl
-#    depends_on:
-#      - agent

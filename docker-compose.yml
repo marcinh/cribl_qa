@@ -21,6 +21,7 @@ services:
       - cribl
   splitter:
     build:
+      context: .
       dockerfile: dockerfiles/splitter/Dockerfile
     hostname: splitter
     networks:
@@ -30,6 +31,7 @@ services:
       - target_2
   agent:
     build:
+      context: .
       dockerfile: dockerfiles/agent/Dockerfile
     networks:
       - cribl
@@ -37,6 +39,7 @@ services:
       - splitter
   tests:
     build:
+      context: .
       dockerfile: tests/Dockerfile
     networks:
       - cribl

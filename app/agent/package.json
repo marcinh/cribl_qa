@@ -1,0 +1,12 @@
+{
+  "name": "docker_$MODE",
+  "version": "1.0.0",
+  "description": "$MODE on Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js MODE"
+  },
+  "dependencies": {
+    "@types/node": "14.14.5"
+  }
+}

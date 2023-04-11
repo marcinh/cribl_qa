@@ -1,0 +1,12 @@
+{
+  "name": "docker_target",
+  "version": "1.0.0",
+  "description": "Target on Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js target"
+  },
+  "dependencies": {
+    "@types/node": "14.14.5"
+  }
+}

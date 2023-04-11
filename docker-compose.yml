@@ -1,0 +1,42 @@
+version: '3.5'
+networks:
+  cribl:
+    driver: bridge
+services:
+  target_1:
+    build:
+      dockerfile: dockerfiles/target/Dockerfile
+    container_name: target_001
+    hostname: target_1
+    networks:
+      - cribl
+  target_2:
+    build:
+      dockerfile: dockerfiles/target/Dockerfile
+    container_name: target_002
+    hostname: target_2
+    networks:
+      - cribl
+  splitter:
+    build:
+      dockerfile: dockerfiles/splitter/Dockerfile
+    hostname: splitter
+    networks:
+      - cribl
+    depends_on:
+      - target_1
+      - target_2
+  agent:
+    build:
+      dockerfile: dockerfiles/agent/Dockerfile
+    networks:
+      - cribl
+    depends_on:
+      - splitter
+  tests:
+    build:
+      dockerfile: tests/Dockerfile
+    networks:
+      - cribl
+    depends_on:
+      - agent

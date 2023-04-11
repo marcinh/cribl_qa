@@ -1,0 +1,12 @@
+{
+  "name": "docker_agent",
+  "version": "1.0.0",
+  "description": "Agent on Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js agent"
+  },
+  "dependencies": {
+    "@types/node": "14.14.5"
+  }
+}

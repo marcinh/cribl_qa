@@ -1,0 +1,12 @@
+{
+  "name": "docker_splitter",
+  "version": "1.0.0",
+  "description": "Splitter on Docker",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js splitter"
+  },
+  "dependencies": {
+    "@types/node": "14.14.5"
+  }
+}
